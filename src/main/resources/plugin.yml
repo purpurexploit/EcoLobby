@@ -1,0 +1,97 @@
+name: EcoLobby
+version: '${project.version}'
+main: me.baraban4ik.ecolobby.EcoLobby
+api-version: '1.20'
+folia-supported: true
+softdepend: [PlaceholderAPI, NoteBlockAPI]
+
+commands:
+  ecolobby:
+    usage: /<command> <reload, help, give, setspawn, spawn>
+    aliases: [el, elobby, lobby]
+    permission: ecolobby.command
+  setspawn:
+    usage: /<command> (main / first)
+    permission: ecolobby.command.setspawn
+  spawn:
+    usage: /<command>
+    permission: ecolobby.command.spawn
+
+permissions:
+  ecolobby.*:
+    default: op
+    children:
+      ecolobby.notify: true
+      ecolobby.bypass.*: true
+      ecolobby.command.*: true
+
+  # Permissions command
+  ecolobby.command:
+    default: op
+  ecolobby.command.reload:
+    default: op
+  ecolobby.command.help:
+    default: op
+  ecolobby.command.give:
+    default: op
+  ecolobby.command.open:
+    default: op
+  ecolobby.command.setspawn:
+    default: op
+  ecolobby.command.spawn:
+    default: true
+
+  ecolobby.command.*:
+    default: op
+    children:
+      ecolobby.command.reload: true
+      ecolobby.command.help: true
+      ecolobby.command.open: true
+      ecolobby.command.setspawn: true
+      ecolobby.command.spawn: true
+
+  # Permissions bypass
+  ecolobby.bypass.movements:
+    default: op
+  ecolobby.bypass.fly:
+    default: op
+
+  ecolobby.bypass.chat:
+    default: op
+  ecolobby.bypass.commands:
+    default: op
+
+  ecolobby.bypass.blocks.break:
+    default: op
+  ecolobby.bypass.blocks.place:
+    default: op
+  ecolobby.bypass.blocks.interact:
+    default: op
+
+  ecolobby.bypass.items.move:
+    default: op
+  ecolobby.bypass.items.drop:
+    default: op
+  ecolobby.bypass.items.pickup:
+    default: op
+
+  ecolobby.bypass.*:
+    default: op
+    children:
+      ecolobby.bypass.movements: true
+      ecolobby.bypass.fly: true
+
+      ecolobby.bypass.chat: true
+      ecolobby.bypass.commands: true
+
+      ecolobby.bypass.blocks.break: true
+      ecolobby.bypass.blocks.place: true
+      ecolobby.bypass.blocks.interact: true
+
+      ecolobby.bypass.items.move: true
+      ecolobby.bypass.items.drop: true
+      ecolobby.bypass.items.pickup: true
+
+  # Permissions other
+  ecolobby.notify:
+    default: true

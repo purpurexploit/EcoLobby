@@ -1,0 +1,37 @@
+#    ╔═════════════════════════════════════════════════════════════╗
+#    ║                                                             ║
+#    ║      ____  ___  _____    __    _____  ____  ____  _  _      ║
+#    ║     ( ___)/ __)(  _  )  (  )  (  _  )(  _ \(  _ \( \/ )     ║
+#    ║      )__)( (__  )(_)(    )(__  )(_)(  ) _ < ) _ < \  /      ║
+#    ║     (____)\___)(_____)  (____)(_____)(____/(____/ (__)      ║
+#    ║                                                             ║
+#    ╚═════════════════════════════════════════════════════════════╝
+
+check_updates: true # Checking for a new plugin version
+
+# Available languages: en and ru
+language: en
+
+Whitelist:
+  enabled: false
+  players:
+    - "Baraban4ik"
+
+Blacklist:
+  enabled: false
+  players:
+    - "Baraban4ik"
+
+Leave:
+  # Clearing items when leaving a server
+  clear_items: false
+
+Hiders:
+  hide_stream:
+    all: true
+    join: false
+    leave: false
+    death: false
+    kick: false
+  # Hide messages about join, leave, death, etc.
+  players: true # Hide players from each other
